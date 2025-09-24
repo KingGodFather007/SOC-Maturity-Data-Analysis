@@ -1,86 +1,63 @@
-SOC Maturity Data Analysis
+# SOC-Maturity-Analysis  
 
-This repository provides a Python workflow for analyzing SOC (Security Operations Center) maturity data.
-It performs correlation analysis, regression modeling, and standardized beta estimation on synthesized SOC performance metrics.
+This repository contains a comprehensive Python pipeline for **SOC (Security Operations Center) Maturity Analysis**.  
+The project demonstrates data preprocessing, correlation analysis, regression modeling, and standardized beta estimation to evaluate the relationships between SOC capabilities and operational performance metrics.  
 
-📌 Features
+---
 
-Data Preprocessing
+## 🚀 Features  
 
-Loads data from an Excel file
+* **Data Preprocessing**:  
+  * Loads data from Excel spreadsheets  
+  * Applies log-transformations on time-based metrics (MTTD, MTTR, MTTC)  
 
-Log-transforms time-based metrics (MTTD, MTTR, MTTC)
+* **Correlation Analysis**:  
+  * Computes Pearson correlation coefficients (*r*)  
+  * Generates *p*-value significance matrix  
 
-Correlation Analysis
+* **Regression Modeling**:  
+  * OLS regression (unstandardized coefficients) with `statsmodels`  
+  * Standardized beta coefficients using `scikit-learn`  
 
-Computes Pearson’s r correlation matrix
+* **Comprehensive Outputs**:  
+  * Correlation matrix with significance testing  
+  * Detailed OLS regression summary  
+  * Standardized beta weights (β)  
 
-Provides corresponding p-values
+* **Extensible Framework**:  
+  * Can be adapted to additional maturity dimensions and performance indicators  
 
-Regression Analysis
+---
 
-Unstandardized OLS regression coefficients using statsmodels
+## 📂 Project Structure  
 
-Standardized Beta coefficients using scikit-learn
-
-Outputs
-
-Correlation matrix
-
-Significance matrix (p-values)
-
-Full OLS regression summary
-
-Standardized regression betas
-
-🛠️ Requirements
-
-The project uses the following Python packages:
-
-pip install pandas numpy scipy statsmodels scikit-learn openpyxl
-
-📂 Project Structure
 SOC-Maturity-Analysis/
-│── SOC_analysis.py       # Main analysis script
+│── SOC_analysis.py # Main analysis script
 │── Synthesised data.xlsx # Input dataset (not included in repo)
-│── README.md             # Project documentation
+│── README.md # Project documentation
 
+yaml
+Copy code
+
+---
+
+## 🛠️ Requirements  
+
+Install dependencies with:  
+
+```bash
+pip install pandas numpy scipy statsmodels scikit-learn openpyxl
 ▶️ Usage
-
 Clone the repository:
 
+bash
+Copy code
 git clone https://github.com/yourusername/SOC-Maturity-Analysis.git
 cd SOC-Maturity-Analysis
-
-
 Place your dataset (Synthesised data.xlsx) in the project root directory.
 
-Run the script:
+Run the analysis:
 
+bash
+Copy code
 python SOC_analysis.py
-
-📊 Example Outputs
-
-Correlation Matrix (Pearson r):
-
-            AAS  log_MTTD  log_MTTR  log_MTTC  FPR (%)
-AAS        1.000    0.321    -0.214     0.198   -0.142
-log_MTTD   0.321    1.000     0.453     0.375    0.210
-...
-
-
-Standardized Betas (β):
-
-CTI          -0.317
-Detection     0.502
-Emulation    -0.128
-Automation   -0.276
-dtype: float64
-
-📖 Notes
-
-Replace Synthesised data.xlsx with your dataset.
-
-Ensure column names in the Excel file match those used in the script.
-
-The analysis framework is extensible to additional maturity or performance metrics.
