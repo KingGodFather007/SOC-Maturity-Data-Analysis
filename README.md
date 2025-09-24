@@ -31,13 +31,12 @@ The project demonstrates data preprocessing, correlation analysis, regression mo
 
 ## 📂 Project Structure  
 
-SOC-Maturity-Analysis/
+
+```SOC-Maturity-Analysis/
 │── SOC_analysis.py # Main analysis script
 │── Synthesised data.xlsx # Input dataset (not included in repo)
 │── README.md # Project documentation
-
-yaml
-Copy code
+```
 
 ---
 
@@ -47,17 +46,18 @@ Install dependencies with:
 
 ```bash
 pip install pandas numpy scipy statsmodels scikit-learn openpyxl
-▶️ Usage
-Clone the repository:
+```
 
-bash
-Copy code
+## ▶️ Usage
+* **Clone the repository:
+```
 git clone https://github.com/yourusername/SOC-Maturity-Analysis.git
 cd SOC-Maturity-Analysis
-Place your dataset (Synthesised data.xlsx) in the project root directory.
 
-Run the analysis:
+```
 
-bash
-Copy code
+* **Place your dataset (Synthesised data.xlsx) in the project root directory.
+* **Run the analysis:
+```
 python SOC_analysis.py
+```
